@@ -1,0 +1,196 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "food recall",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "SetFoodIntent",
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "meal",
+              "type": "meal"
+            },
+            {
+              "name": "place",
+              "type": "AMAZON.FoodEstablishment"
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME"
+            },
+            {
+              "name": "companion",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "{companion}",
+            "{time}",
+            "{place}",
+            "{meal}",
+            "I had {meal}",
+            "I had {food} for  {meal} "
+          ]
+        },
+        {
+          "name": "LoadSavedMealIntent",
+          "slots": [],
+          "samples": [
+            "What did I eat"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "dinner"
+              }
+            },
+            {
+              "name": {
+                "value": "lunch"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakfast"
+              }
+            }
+          ],
+          "name": "meal"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SetFoodIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.271021807047.1231969599645"
+              }
+            },
+            {
+              "name": "meal",
+              "type": "meal",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.278066850177.501703859515"
+              }
+            },
+            {
+              "name": "place",
+              "type": "AMAZON.FoodEstablishment",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.232451715039.710768024876"
+              }
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.851451418646.441717575402"
+              }
+            },
+            {
+              "name": "companion",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.851451418646.1240905838988"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.278066850177.501703859515",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what meal would you like to record?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.271021807047.1231969599645",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what did you have?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.232451715039.710768024876",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Great. Where did you eat the meal?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.851451418646.441717575402",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When did you have the meal?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.851451418646.1240905838988",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Who did you have the meal with?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "11"
+}
